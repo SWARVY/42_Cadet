@@ -3,14 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sinhyeonho <sinhyeonho@student.42.fr>      +#+  +:+       +#+        */
+/*   By: hyeoshin <hyeoshin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 20:19:51 by sinhyeonho        #+#    #+#             */
-/*   Updated: 2023/03/13 21:09:45 by sinhyeonho       ###   ########.fr       */
+/*   Updated: 2023/03/13 22:52:49 by hyeoshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*memset(void *b, int c, int len)
+#include <stdlib.h>
+
+void	*ft_memset(void *b, int c, size_t len)
 {
 	int				i;
 	unsigned char	*temp;
