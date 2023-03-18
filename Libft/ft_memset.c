@@ -6,19 +6,20 @@
 /*   By: hyeoshin <hyeoshin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 20:19:51 by sinhyeonho        #+#    #+#             */
-/*   Updated: 2023/03/18 15:03:32 by hyeoshin         ###   ########.fr       */
+/*   Updated: 2023/03/18 16:43:05 by hyeoshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "ft_libft.h"
 
 void	*ft_memset(void *b, int c, size_t len)
 {
-	int				i;
+	size_t			i;
 	unsigned char	*temp;
 
 	i = 0;
 	temp = (unsigned char *)b;
+
 	while (i < len)
 		temp[i++] = (unsigned char)c;
 	return (b);

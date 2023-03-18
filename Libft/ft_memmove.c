@@ -3,10 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sinhyeonho <sinhyeonho@student.42.fr>      +#+  +:+       +#+        */
+/*   By: hyeoshin <hyeoshin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 20:19:49 by sinhyeonho        #+#    #+#             */
-/*   Updated: 2023/03/13 20:19:49 by sinhyeonho       ###   ########.fr       */
+/*   Updated: 2023/03/18 15:31:52 by hyeoshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ft_libft.h"
+
+void	*ft_memmove(void *dst, const void *src, size_t len)
+{
+	
+}

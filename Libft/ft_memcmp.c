@@ -3,10 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sinhyeonho <sinhyeonho@student.42.fr>      +#+  +:+       +#+        */
+/*   By: hyeoshin <hyeoshin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 20:19:39 by sinhyeonho        #+#    #+#             */
-/*   Updated: 2023/03/13 20:19:40 by sinhyeonho       ###   ########.fr       */
+/*   Updated: 2023/03/18 15:32:39 by hyeoshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ft_libft.h"
+
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
+{
+
+}

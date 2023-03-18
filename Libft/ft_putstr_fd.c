@@ -3,10 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sinhyeonho <sinhyeonho@student.42.fr>      +#+  +:+       +#+        */
+/*   By: hyeoshin <hyeoshin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 20:31:45 by sinhyeonho        #+#    #+#             */
-/*   Updated: 2023/03/13 20:31:45 by sinhyeonho       ###   ########.fr       */
+/*   Updated: 2023/03/18 15:42:37 by hyeoshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ft_libft.h"
+
+void	ft_putstr_fd(char *s, int fd)
+{
+	
+}

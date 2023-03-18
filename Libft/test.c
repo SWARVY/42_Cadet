@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   test.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyeoshin <hyeoshin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/13 20:20:11 by sinhyeonho        #+#    #+#             */
-/*   Updated: 2023/03/18 15:19:52 by hyeoshin         ###   ########.fr       */
+/*   Created: 2023/03/18 15:16:14 by hyeoshin          #+#    #+#             */
+/*   Updated: 2023/03/18 16:49:52 by hyeoshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_toupper(int c)
+#include <stdio.h>
+#include "ft_libft.h"
+
+int	main(void)
 {
-	if (c >= 97 && c <= 122)
-		return (c - 32);
-	return (c);
+	printf("res : %s", ft_substr("abcdefg", 1, 8));
 }
