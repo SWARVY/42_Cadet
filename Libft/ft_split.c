@@ -3,30 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hyeoshin <hyeoshin@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sinhyeonho <sinhyeonho@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 21:46:16 by hyeoshin          #+#    #+#             */
-/*   Updated: 2023/03/18 15:19:39 by hyeoshin         ###   ########.fr       */
+/*   Updated: 2023/03/18 18:50:03 by sinhyeonho       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-int	ft_check_seperator(char *charset, char c)
+int	ft_check_seperator(char sep, char c)
 {
-	int	cnt;
-
-	cnt = 0;
-	while (charset[cnt])
-	{
-		if (charset[cnt] == c)
-			return (1);
-		cnt += 1;
-	}
+	if (sep == c)
+		return (1);
 	return (0);
 }
 
-int	ft_strcnt(char *str, char *charset)
+int	ft_strcnt(char *s, char c)
 {
 	int	cnt;
 	int	check;
@@ -35,28 +28,28 @@ int	ft_strcnt(char *str, char *charset)
 	cnt = 0;
 	check = 1;
 	amount = 0;
-	while (str[cnt])
+	while (s[cnt])
 	{
-		if (!ft_check_seperator(charset, str[cnt]) && check)
+		if (!ft_check_seperator(c, s[cnt]) && check)
 		{
 			amount += 1;
 			check = 0;
 		}
-		else if (ft_check_seperator(charset, str[cnt]))
+		else if (ft_check_seperator(c, s[cnt]))
 			check = 1;
 		cnt += 1;
 	}
 	return (amount);
 }
 
-int	ft_strlen(char *str, char *charset, int index)
+int	ft_strlen(char *s, char c, int index)
 {
 	int	len;
 
 	len = 0;
-	while (str[index])
+	while (s[index])
 	{
-		if (ft_check_seperator(charset, str[index]))
+		if (ft_check_seperator(c, s[index]))
 			break ;
 		len += 1;
 		index += 1;
@@ -64,7 +57,7 @@ int	ft_strlen(char *str, char *charset, int index)
 	return (len);
 }
 
-void	result(char *str, char *charset, char **res, int word_amount)
+void	result(char const *s, char c, char **res, int word_amount)
 {
 	int	i;
 	int	j;
@@ -76,13 +69,13 @@ void	result(char *str, char *charset, char **res, int word_amount)
 	while (i < word_amount)
 	{
 		j = 0;
-		while (ft_check_seperator(charset, str[idx]))
+		while (ft_check_seperator(c, s[idx]))
 			idx += 1;
-		len = ft_strlen(str, charset, idx);
+		len = ft_strlen(s, c, idx);
 		res[i] = (char *)malloc(sizeof(char) * (len + 1));
 		while (j < len)
 		{
-			res[i][j] = str[idx];
+			res[i][j] = s[idx];
 			j += 1;
 			idx += 1;
 		}
@@ -91,14 +84,14 @@ void	result(char *str, char *charset, char **res, int word_amount)
 	}
 }
 
-char	**ft_split(char *str, char *charset)
+char	**ft_split(char const *s, char c)
 {
 	char	**res;
 	int		word_amount;
 
-	word_amount = ft_strcnt(str, charset);
+	word_amount = ft_strcnt(s, c);
 	res = (char **)malloc(sizeof(char *) * (word_amount + 1));
-	result(str, charset, res, word_amount);
+	result(s, c, res, word_amount);
 	res[word_amount] = (void *)0;
 	return (res);
 }

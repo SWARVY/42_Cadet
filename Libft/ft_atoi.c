@@ -3,14 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hyeoshin <hyeoshin@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sinhyeonho <sinhyeonho@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 20:19:24 by sinhyeonho        #+#    #+#             */
-/*   Updated: 2023/03/18 16:50:23 by hyeoshin         ###   ########.fr       */
+/*   Updated: 2023/03/18 19:09:19 by sinhyeonho       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_atoi(const char *str)
 {
-	
 }

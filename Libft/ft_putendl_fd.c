@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hyeoshin <hyeoshin@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sinhyeonho <sinhyeonho@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 20:31:57 by sinhyeonho        #+#    #+#             */
-/*   Updated: 2023/03/18 15:42:18 by hyeoshin         ###   ########.fr       */
+/*   Updated: 2023/03/18 19:10:48 by sinhyeonho       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,4 @@
 
 void	ft_putendl_fd(char *s, int fd)
 {
-	
 }

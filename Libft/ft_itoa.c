@@ -3,14 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hyeoshin <hyeoshin@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sinhyeonho <sinhyeonho@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/18 15:36:50 by hyeoshin          #+#    #+#             */
-/*   Updated: 2023/03/18 15:43:35 by hyeoshin         ###   ########.fr       */
+/*   Updated: 2023/03/18 19:11:17 by sinhyeonho       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_itoa(int n)
 {
-	
 }

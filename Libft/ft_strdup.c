@@ -3,14 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hyeoshin <hyeoshin@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sinhyeonho <sinhyeonho@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 20:28:23 by sinhyeonho        #+#    #+#             */
-/*   Updated: 2023/03/18 15:19:40 by hyeoshin         ###   ########.fr       */
+/*   Updated: 2023/03/18 16:58:47 by sinhyeonho       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "ft_libft.h"
 
 char	*ft_strdup(char *src)

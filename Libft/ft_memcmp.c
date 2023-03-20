@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hyeoshin <hyeoshin@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sinhyeonho <sinhyeonho@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 20:19:39 by sinhyeonho        #+#    #+#             */
-/*   Updated: 2023/03/18 15:32:39 by hyeoshin         ###   ########.fr       */
+/*   Updated: 2023/03/18 19:09:45 by sinhyeonho       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,4 @@
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-
 }
