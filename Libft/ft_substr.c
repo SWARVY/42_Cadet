@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sinhyeonho <sinhyeonho@student.42.fr>      +#+  +:+       +#+        */
+/*   By: hyeoshin <hyeoshin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 20:28:51 by sinhyeonho        #+#    #+#             */
-/*   Updated: 2023/03/20 16:23:00 by sinhyeonho       ###   ########.fr       */
+/*   Updated: 2023/03/21 17:53:51 by hyeoshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,23 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	unsigned int	string_length;
-	char			*str;
-	int				idx;
+	size_t	string_length;
+	size_t	curr_length;
+	char	*str;
 
+	if (!s)
+		return (0);
 	string_length = ft_strlen(s);
-	if (start + len > string_length - 1)
-		return ((void *)0);
-	str = (char *)malloc(sizeof(char) * len);
-	idx = 0;
-	while (str[idx])
-	{
-		str[idx] = s[start + idx];
-		idx += 1;
-	}
+	curr_length = 0;
+	if (string_length <= start)
+		start = 0;
+	else if (string_length < start + len)
+		curr_length = string_length - start;
+	else
+		curr_length = len;
+	str = (char *)malloc(sizeof(char) * (curr_length + 1));
+	if (!str)
+		return (0);
+	ft_strlcpy(str, s + start, curr_length + 1);
 	return (str);
 }

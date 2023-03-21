@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sinhyeonho <sinhyeonho@student.42.fr>      +#+  +:+       +#+        */
+/*   By: hyeoshin <hyeoshin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 20:30:30 by sinhyeonho        #+#    #+#             */
-/*   Updated: 2023/03/20 16:22:57 by sinhyeonho       ###   ########.fr       */
+/*   Updated: 2023/03/21 18:09:26 by hyeoshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,28 @@
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	char	*str;
-	int		idx;
+	int		head;
+	int		tail;
 	int		len;
 
-	idx = 0;
+	if (!s1)
+		return (0);
+	if (!set)
+		return (ft_strdup(s1));
 	len = ft_strlen(s1);
-	if (ft_strchr(set, s1[0]))
+	if (!len)
+		return (ft_strdup(s1));
+	head = 0;
+	tail = len - 1;
+	while (ft_strchr(set, s1[head]) && s1[head])
 	{
-		idx += 1;
 		len -= 1;
+		head += 1;
 	}
-	if (ft_strchr(set, s1[len - 1]) && len > 1)
+	while (ft_strchr(set, s1[tail]) && s1[tail] && len > 1)
+	{
 		len -= 1;
-	str = (char *)malloc(sizeof(char) * (len + 1));
-	if (!str)
-		return ((void *)0);
-	ft_strlcpy(str, (char *)(s1 + idx), len);
-	return (str);
+		tail -= 1;
+	}
+	return (ft_substr(s1, head, len));
 }
