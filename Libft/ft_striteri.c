@@ -6,10 +6,12 @@
 /*   By: sinhyeonho <sinhyeonho@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 20:31:20 by sinhyeonho        #+#    #+#             */
-/*   Updated: 2023/03/18 19:10:37 by sinhyeonho       ###   ########.fr       */
+/*   Updated: 2023/03/20 16:18:46 by sinhyeonho       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
+	(void)s;
+	(void)f;
 }

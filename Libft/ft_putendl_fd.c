@@ -6,12 +6,14 @@
 /*   By: sinhyeonho <sinhyeonho@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 20:31:57 by sinhyeonho        #+#    #+#             */
-/*   Updated: 2023/03/18 19:10:48 by sinhyeonho       ###   ########.fr       */
+/*   Updated: 2023/03/20 16:22:08 by sinhyeonho       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_libft.h"
+#include "libft.h"
 
 void	ft_putendl_fd(char *s, int fd)
 {
+	(void)s;
+	(void)fd;
 }

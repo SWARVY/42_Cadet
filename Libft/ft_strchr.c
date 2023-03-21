@@ -6,24 +6,22 @@
 /*   By: sinhyeonho <sinhyeonho@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 20:19:53 by sinhyeonho        #+#    #+#             */
-/*   Updated: 2023/03/18 20:21:17 by sinhyeonho       ###   ########.fr       */
+/*   Updated: 2023/03/20 18:51:44 by sinhyeonho       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
 char	*ft_strchr(char const *s, int c)
 {
-	char	*tmp;
-	int		cnt;
+	unsigned char	ch;
 
-	cnt = 0;
-	tmp = (char *)s;
-	while (*tmp)
+	ch = (unsigned char)c;
+	while (*s)
 	{
-		if (*tmp == c)
-			return (tmp);
-		tmp++;
+		if (*s == ch)
+			return ((char *)s);
+		s++;
 	}
+	if (!ch)
+		return ((char *)s);
 	return ((void *)0);
 }

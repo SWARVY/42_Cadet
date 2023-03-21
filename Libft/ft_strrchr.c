@@ -6,27 +6,26 @@
 /*   By: sinhyeonho <sinhyeonho@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 20:20:07 by sinhyeonho        #+#    #+#             */
-/*   Updated: 2023/03/18 20:28:14 by sinhyeonho       ###   ########.fr       */
+/*   Updated: 2023/03/21 13:47:38 by sinhyeonho       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_libft.h"
+#include "libft.h"
 
 char	*ft_strrchr(const char *s, int c)
 {
-	char	*tmp;
-	int		len;
+	char	*start;
 
-	tmp = (char *)s;
-	len = ft_strlen(s);
-	while (*tmp)
-		tmp += 1;
-	while (len > 0)
+	start = (char *)s;
+	while (*s)
+		s++;
+	while (s != start)
 	{
-		if (*tmp == c)
-			return (tmp);
-		tmp -= 1;
-		len -= 1;
+		if (*s == (unsigned char)c)
+			break ;
+		s--;
 	}
-	return ((void *)0);
+	if (*s == c)
+		return ((char *)s);
+	return (0);
 }

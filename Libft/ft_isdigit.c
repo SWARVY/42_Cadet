@@ -3,16 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hyeoshin <hyeoshin@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sinhyeonho <sinhyeonho@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 20:16:54 by sinhyeonho        #+#    #+#             */
-/*   Updated: 2023/03/18 15:44:35 by hyeoshin         ###   ########.fr       */
+/*   Updated: 2023/03/20 16:34:17 by sinhyeonho       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isdigit(int c)
 {
-	if (c >= 48 && c <= 57)
-		return (1);
-	return (0);
+	return (c >= 48 && c <= 57);
 }

@@ -6,10 +6,12 @@
 /*   By: sinhyeonho <sinhyeonho@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/18 15:36:50 by hyeoshin          #+#    #+#             */
-/*   Updated: 2023/03/18 19:11:17 by sinhyeonho       ###   ########.fr       */
+/*   Updated: 2023/03/20 16:16:53 by sinhyeonho       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_itoa(int n)
 {
+	(void)n;
+	return ("not yet");
 }
