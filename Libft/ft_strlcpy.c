@@ -6,13 +6,13 @@
 /*   By: hyeoshin <hyeoshin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 20:19:57 by sinhyeonho        #+#    #+#             */
-/*   Updated: 2023/03/21 17:10:57 by hyeoshin         ###   ########.fr       */
+/*   Updated: 2023/03/24 17:11:21 by hyeoshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *restrict dest, const char *restrict src, size_t size)
+size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
 	size_t	cnt;
 
