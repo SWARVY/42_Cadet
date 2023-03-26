@@ -6,7 +6,7 @@
 /*   By: hyeoshin <hyeoshin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 20:19:55 by sinhyeonho        #+#    #+#             */
-/*   Updated: 2023/03/24 17:11:39 by hyeoshin         ###   ########.fr       */
+/*   Updated: 2023/03/26 21:09:25 by hyeoshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
-	unsigned int	len_dest;
-	unsigned int	len_src;
-	unsigned int	cnt;
+	size_t	len_dest;
+	size_t	len_src;
+	size_t	cnt;
 
 	len_dest = ft_strlen(dest);
 	len_src = ft_strlen(src);
