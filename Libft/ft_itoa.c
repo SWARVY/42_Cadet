@@ -6,13 +6,13 @@
 /*   By: hyeoshin <hyeoshin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/18 15:36:50 by hyeoshin          #+#    #+#             */
-/*   Updated: 2023/03/24 15:25:14 by hyeoshin         ###   ########.fr       */
+/*   Updated: 2023/03/26 23:45:45 by hyeoshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	mypow(int n)
+static int	mypow(int n)
 {
 	int	val;
 
@@ -22,7 +22,7 @@ int	mypow(int n)
 	return (val);
 }
 
-int	numlen(long long n)
+static int	numlen(long long n)
 {
 	int	len;
 
@@ -35,7 +35,7 @@ int	numlen(long long n)
 	return (len + 1);
 }
 
-char	*memory_allocate(int n, int len)
+static char	*memory_allocate(int n, int len)
 {
 	char	*str;
 

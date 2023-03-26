@@ -6,13 +6,13 @@
 /*   By: hyeoshin <hyeoshin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 21:46:16 by hyeoshin          #+#    #+#             */
-/*   Updated: 2023/03/21 19:10:43 by hyeoshin         ###   ########.fr       */
+/*   Updated: 2023/03/26 23:47:04 by hyeoshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	make_free(char **res, int idx)
+static void	make_free(char **res, int idx)
 {
 	if (!idx)
 		free(res[0]);
@@ -21,7 +21,7 @@ void	make_free(char **res, int idx)
 	free(res);
 }
 
-int	strcnt(char const *s, char c)
+static int	strcnt(char const *s, char c)
 {
 	int	cnt;
 	int	check;
@@ -44,7 +44,7 @@ int	strcnt(char const *s, char c)
 	return (amount);
 }
 
-int	charcnt(char const *s, char c, int index)
+static int	charcnt(char const *s, char c, int index)
 {
 	int	len;
 
@@ -59,7 +59,7 @@ int	charcnt(char const *s, char c, int index)
 	return (len);
 }
 
-int	result(char const *s, char c, char **res, int word_amount)
+static int	result(char const *s, char c, char **res, int word_amount)
 {
 	int		i;
 	int		j;

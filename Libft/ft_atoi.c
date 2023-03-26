@@ -6,13 +6,13 @@
 /*   By: hyeoshin <hyeoshin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 20:19:24 by sinhyeonho        #+#    #+#             */
-/*   Updated: 2023/03/26 21:08:56 by hyeoshin         ###   ########.fr       */
+/*   Updated: 2023/03/26 23:45:25 by hyeoshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	is_white_space(const char *str)
+static int	is_white_space(const char *str)
 {
 	int	cnt;
 
