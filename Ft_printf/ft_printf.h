@@ -6,19 +6,21 @@
 /*   By: hyeoshin <hyeoshin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 22:58:52 by hyeoshin          #+#    #+#             */
-/*   Updated: 2023/03/26 23:15:36 by hyeoshin         ###   ########.fr       */
+/*   Updated: 2023/03/29 16:03:03 by hyeoshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF
-#define FT_PRINTF
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 
-#include <unistd.h>
-#include <stdarg.h>
+# include <unistd.h>
+# include <stdarg.h>
 
-int		ft_printf(const char *str, ...);
-void	ft_putchar_fd(char c, int fd);
-void	ft_putstr_fd(char *s, int fd);
-int		ft_strlen(const char *s);
+int	ft_printf(const char *str, ...);
+int	ft_putchar(char c);
+int	ft_putstr(char *s);
+int	ft_putnbr(int n, int *cnt);
+int	ft_putunbr(unsigned int n, int *cnt);
+int	ft_hex(unsigned long long nb, char type, int *cnt);
 
 #endif
