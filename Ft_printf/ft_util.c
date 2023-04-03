@@ -6,36 +6,108 @@
 /*   By: hyeoshin <hyeoshin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 20:31:34 by sinhyeonho        #+#    #+#             */
-/*   Updated: 2023/03/26 23:15:28 by hyeoshin         ###   ########.fr       */
+/*   Updated: 2023/03/29 16:24:26 by hyeoshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putchar_fd(char c, int fd)
+int	ft_putchar(char c)
 {
-	write(fd, &c, 1);
+	return (write(1, &c, 1));
 }
 
-void	ft_putstr_fd(char *s, int fd)
+int	ft_putstr(char *s)
 {
-	int	len;
+	int	idx;
 
-	len = ft_strlen(s);
-	while (len--)
+	idx = -1;
+	if (!s)
+		return (write(1, "(null)", 6));
+	while (s[++idx])
 	{
-		ft_putchar_fd(*s, fd);
-		s++;
+		if (write(1, &s[idx], 1) == -1)
+			return (-1);
 	}
+	return (idx);
 }
 
-int	ft_strlen(const char *s)
+int	ft_putnbr(int n, int *cnt)
 {
-	int	cnt;
+	long long	nb;
 
-	cnt = 0;
-	while (s[cnt])
-		cnt += 1;
-	return (cnt);
+	nb = n;
+	if (nb < 0)
+	{
+		if (ft_putchar('-') == -1)
+			return (-1);
+		*cnt += 1;
+		nb = -nb;
+	}
+	if (nb >= 10)
+	{
+		if (ft_putnbr(nb / 10, cnt) == -1)
+			return (-1);
+		nb %= 10;
+	}
+	if (nb < 10)
+	{
+		if (ft_putchar(nb + '0') == -1)
+			return (-1);
+	}
+	*cnt += 1;
+	return (*cnt);
 }
 
+int	ft_putunbr(unsigned int n, int *cnt)
+{
+	long long	nb;
+
+	nb = n;
+	if (nb < 0)
+	{
+		if (ft_putchar('-') == -1)
+			return (-1);
+		*cnt += 1;
+		nb = -nb;
+	}
+	if (nb >= 10)
+	{
+		if (ft_putnbr(nb / 10, cnt) == -1)
+			return (-1);
+		nb %= 10;
+	}
+	if (nb < 10)
+	{
+		if (ft_putchar(nb + '0') == -1)
+			return (-1);
+	}
+	*cnt += 1;
+	return (*cnt);
+}
+
+int	ft_hex(unsigned long long nb, char type, int *cnt)
+{
+	int	check;
+
+	if (nb >= 16)
+	{
+		check = ft_hex(nb / 16, type, cnt);
+		if (check == -1)
+			return (-1);
+		check = ft_hex(nb % 16, type, cnt);
+		if (check == -1)
+			return (-1);
+	}
+	else
+	{
+		if (type == 'x' || type == 'p')
+			if (ft_putchar("0123456789abcdef"[nb]) == -1)
+				return (-1);
+		if (type == 'X')
+			if (ft_putchar("0123456789ABCDEF"[nb]) == -1)
+				return (-1);
+		*cnt += 1;
+	}
+	return (*cnt);
+}
