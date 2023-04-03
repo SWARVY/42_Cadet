@@ -6,13 +6,13 @@
 /*   By: hyeoshin <hyeoshin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 22:48:06 by hyeoshin          #+#    #+#             */
-/*   Updated: 2023/03/26 23:25:51 by hyeoshin         ###   ########.fr       */
+/*   Updated: 2023/04/03 12:30:22 by hyeoshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	options()
+void	options(char *opt)
 {
 	
 }

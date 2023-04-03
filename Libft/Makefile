@@ -6,7 +6,7 @@
 #    By: hyeoshin <hyeoshin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/13 19:56:31 by sinhyeonho        #+#    #+#              #
-#    Updated: 2023/03/24 17:19:17 by hyeoshin         ###   ########.fr        #
+#    Updated: 2023/04/03 12:55:42 by hyeoshin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,13 +19,13 @@ ft_strncmp.c ft_strnstr.c ft_strrchr.c ft_tolower.c ft_toupper.c\
 ft_substr.c ft_strjoin.c ft_strtrim.c ft_split.c ft_itoa.c ft_strmapi.c\
 ft_striteri.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
 
-BSRCS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
+BSRCS = ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c ft_lstlast_bonus.c ft_lstadd_back_bonus.c ft_lstdelone_bonus.c ft_lstclear_bonus.c ft_lstiter_bonus.c ft_lstmap_bonus.c
 
 OBJS = $(SRCS:.c=.o)
 BOBJS = $(BSRCS:.c=.o)
 
 CC = cc -Wall -Wextra -Werror
-AR = ar -rcs
+AR = ar -rc
 RM = rm -f
 
 ifdef BONUS
@@ -40,10 +40,10 @@ bonus :
 	make BONUS=1 all
 
 $(NAME) : $(TOT_OBJS)
-	$(AR) $@ $^
-
-.c.o : 
-	$(CC) -c $< -o ${<:.c=.o} -I libft.h
+	
+%.o : %.c libft.h
+	$(CC) -c $<
+	$(AR) $(NAME) $<
 
 clean : 
 	$(RM) $(BOBJS) $(OBJS);
