@@ -6,7 +6,7 @@
 /*   By: hyeoshin <hyeoshin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 14:06:39 by hyeoshin          #+#    #+#             */
-/*   Updated: 2023/04/17 17:28:17 by hyeoshin         ###   ########.fr       */
+/*   Updated: 2023/04/17 17:41:19 by hyeoshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ char	*reStore(char *store)
 	else
 		len = pos - store + 1;
 	if (!store[len])
-		return (&store);
-	newStore = ft_substr(store, 0, ft_strlen(store) - len);
+		return (makeFree(&store));
+	newStore = ft_substr(store, len, ft_strlen(store) - len);
 	if (!newStore)
 		return (NULL);
 	return (newStore);
@@ -79,7 +79,6 @@ char	*readBuf(char *store, int fd)
 	return (store);
 }
 
-// 한 줄씩 입력을 받아야하니까, strchr로 '\0'까지 문자열 떼오고, 해당 길이 측정해서 저장하면되지않을까..
 char	*get_next_line(int fd)
 {
 	static char	*store;
