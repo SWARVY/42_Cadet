@@ -6,42 +6,42 @@
 /*   By: hyeoshin <hyeoshin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 14:06:39 by hyeoshin          #+#    #+#             */
-/*   Updated: 2023/04/17 17:41:19 by hyeoshin         ###   ########.fr       */
+/*   Updated: 2023/04/22 12:09:30 by hyeoshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-void	*makeFree(void **mem)
+char	*make_free(char **mem)
 {
 	free(mem);
-	mem = NULL;
+	*mem = NULL;
 	return (NULL);
 }
 
-char	*reStore(char *store)
+char	*re_store(char *store)
 {
-	char	*newStore;
+	char	*new_store;
 	char	*pos;
 	int		len;
 
 	pos = ft_strchr(store, '\n');
 	if (!pos)
 	{
-		newStore = NULL;
-		return (makeFree(&store));
+		new_store = NULL;
+		return (make_free(&store));
 	}
 	else
 		len = pos - store + 1;
 	if (!store[len])
-		return (makeFree(&store));
-	newStore = ft_substr(store, len, ft_strlen(store) - len);
-	if (!newStore)
+		return (make_free(&store));
+	new_store = ft_substr(store, len, ft_strlen(store) - len);
+	if (!new_store)
 		return (NULL);
-	return (newStore);
+	return (new_store);
 }
 
-char	*nextLine(char *store)
+char	*next_line(char *store)
 {
 	char	*line;
 	char	*pos;
@@ -55,7 +55,7 @@ char	*nextLine(char *store)
 	return (line);
 }
 
-char	*readBuf(char *store, int fd)
+char	*read_buf(char *store, int fd)
 {
 	char	*buf;
 	int		check;
@@ -63,11 +63,12 @@ char	*readBuf(char *store, int fd)
 	check = 1;
 	buf = (char *)malloc(sizeof(char) * (BUFFER_SIZE + 1));
 	if (!buf)
-		return (makeFree(&store));
+		return (make_free(&store));
 	buf[0] = '\0';
-	while (check && !ft_strchr(buf, '\n')) {
+	while (check > 0 && !ft_strchr(buf, '\n'))
+	{
 		check = read(fd, buf, BUFFER_SIZE);
-		if (check)
+		if (check > 0)
 		{
 			buf[check] = '\0';
 			store = ft_strjoin(store, buf);
@@ -75,7 +76,7 @@ char	*readBuf(char *store, int fd)
 	}
 	free(buf);
 	if (check == -1)
-		return (makeFree(store));
+		return (make_free(&store));
 	return (store);
 }
 
@@ -86,13 +87,13 @@ char	*get_next_line(int fd)
 
 	if (fd < 0)
 		return (NULL);
-	if (store && (ft_strchr(store, '\n')) || !store)
-		store = readBuf(store, fd);
+	if ((store && ft_strchr(store, '\n')) || !store)
+		store = read_buf(store, fd);
 	if (!store)
 		return (NULL);
-	line = nextLine(store);
+	line = next_line(store);
 	if (!line)
-		return (makeFree(&store));
-	store = reStore(store);
+		return (make_free(&store));
+	store = re_store(store);
 	return (line);
 }
