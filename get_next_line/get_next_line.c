@@ -6,7 +6,7 @@
 /*   By: hyeoshin <hyeoshin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 14:06:39 by hyeoshin          #+#    #+#             */
-/*   Updated: 2023/04/22 12:48:50 by hyeoshin         ###   ########.fr       */
+/*   Updated: 2023/04/22 13:22:56 by hyeoshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ char	*re_store(char *store)
 	return (new_store);
 }
 
-char	*next_line(char *store)
+char	*backup(char *store)
 {
 	char	*line;
 	char	*pos;
@@ -92,7 +92,7 @@ char	*get_next_line(int fd)
 		store = read_buf(store, fd);
 	if (!store)
 		return (NULL);
-	line = next_line(store);
+	line = backup(store);
 	if (!line)
 		return (make_free(&store));
 	store = re_store(store);
