@@ -6,16 +6,16 @@
 /*   By: hyeoshin <hyeoshin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 14:06:39 by hyeoshin          #+#    #+#             */
-/*   Updated: 2023/04/22 12:09:30 by hyeoshin         ###   ########.fr       */
+/*   Updated: 2023/04/22 12:48:50 by hyeoshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-char	*make_free(char **mem)
+char	*make_free(char **memory)
 {
-	free(mem);
-	*mem = NULL;
+	free(*memory);
+	*memory = NULL;
 	return (NULL);
 }
 
@@ -36,6 +36,7 @@ char	*re_store(char *store)
 	if (!store[len])
 		return (make_free(&store));
 	new_store = ft_substr(store, len, ft_strlen(store) - len);
+	make_free(&store);
 	if (!new_store)
 		return (NULL);
 	return (new_store);
@@ -87,7 +88,7 @@ char	*get_next_line(int fd)
 
 	if (fd < 0)
 		return (NULL);
-	if ((store && ft_strchr(store, '\n')) || !store)
+	if ((store && !ft_strchr(store, '\n')) || !store)
 		store = read_buf(store, fd);
 	if (!store)
 		return (NULL);

@@ -6,7 +6,7 @@
 /*   By: hyeoshin <hyeoshin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 14:11:40 by hyeoshin          #+#    #+#             */
-/*   Updated: 2023/04/22 12:11:45 by hyeoshin         ###   ########.fr       */
+/*   Updated: 2023/04/22 12:48:33 by hyeoshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ char	*ft_strchr(char const *s, int c)
 	}
 	if (!ch)
 		return ((char *)s);
-	return ((void *)0);
+	return (0);
 }
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
@@ -77,30 +77,22 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	return (str);
 }
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char *s1, char *s2)
 {
-	int		size_a;
-	int		size_b;
-	int		idx;
-	char	*str;
+	char	*ptr;
 
-	size_a = ft_strlen(s1);
-	size_b = ft_strlen(s2);
-	str = (char *)malloc(sizeof(char) * (size_a + size_b + 1));
-	if (!str)
-		return ((void *)0);
-	idx = 0;
-	while (s1[idx])
+	if (!s1)
 	{
-		str[idx] = s1[idx];
-		idx += 1;
+		s1 = malloc(sizeof(char) + 1);
+		if (!s1)
+			return (0);
+		s1[0] = 0;
 	}
-	idx = 0;
-	while (s2[idx])
-	{
-		str[size_a + idx] = s2[idx];
-		idx += 1;
-	}
-	str[size_a + size_b] = '\0';
-	return (str);
+	ptr = (char *)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
+	if (!ptr)
+		return (make_free(&s1));
+	ft_strlcpy(ptr, s1, ft_strlen(s1) + 1);
+	ft_strlcpy(ptr + ft_strlen(s1), s2, ft_strlen(s2) + 1);
+	free(s1);
+	return (ptr);
 }
