@@ -6,7 +6,7 @@
 /*   By: hyeoshin <hyeoshin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 14:09:30 by hyeoshin          #+#    #+#             */
-/*   Updated: 2023/04/22 14:10:08 by hyeoshin         ###   ########.fr       */
+/*   Updated: 2023/04/24 15:41:10 by hyeoshin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,10 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <fcntl.h>
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 42
+# endif
 
 char	*make_free(char **mem);
 char	*re_store(char *store);
